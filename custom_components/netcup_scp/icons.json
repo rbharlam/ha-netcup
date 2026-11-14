@@ -1,0 +1,40 @@
+{
+  "entity": {
+    "binary_sensor": {
+      "rescue_system": { "default": "mdi:lifebuoy" },
+      "guest_agent": { "default": "mdi:robot" }
+    },
+    "button": {
+      "power_off": { "default": "mdi:power-plug-off" }
+    },
+    "sensor": {
+      "state": { "default": "mdi:server" },
+      "cpu_usage": { "default": "mdi:cpu-64-bit" },
+      "network_in": { "default": "mdi:download-network" },
+      "network_out": { "default": "mdi:upload-network" },
+      "packets_in": { "default": "mdi:download" },
+      "packets_out": { "default": "mdi:upload" },
+      "disk_read": { "default": "mdi:harddisk" },
+      "disk_write": { "default": "mdi:harddisk" },
+      "traffic_in": { "default": "mdi:download-network-outline" },
+      "traffic_out": { "default": "mdi:upload-network-outline" },
+      "root_fs_usage": { "default": "mdi:folder-information" },
+      "root_fs_free": { "default": "mdi:folder" },
+      "disk_allocated": { "default": "mdi:harddisk" },
+      "disk_capacity": { "default": "mdi:harddisk" },
+      "memory": { "default": "mdi:memory" },
+      "vcpus": { "default": "mdi:cpu-64-bit" },
+      "snapshots": { "default": "mdi:camera-burst" },
+      "operating_system": { "default": "mdi:linux" },
+      "kernel": { "default": "mdi:penguin" },
+      "ipv4": { "default": "mdi:ip-network" },
+      "ipv6": { "default": "mdi:ip-network" },
+      "hostname": { "default": "mdi:dns" },
+      "location": { "default": "mdi:map-marker" }
+    },
+    "switch": {
+      "power": { "default": "mdi:power" },
+      "autostart": { "default": "mdi:restart" }
+    }
+  }
+}

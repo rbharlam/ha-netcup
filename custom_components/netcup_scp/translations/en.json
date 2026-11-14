@@ -1,0 +1,96 @@
+{
+  "config": {
+    "step": {
+      "reauth_confirm": {
+        "title": "Re-authenticate netcup",
+        "description": "The netcup login has expired or was revoked. Log in again to continue."
+      },
+      "not_approved": {
+        "title": "Login not completed",
+        "description": "The login was denied or the code expired. Submit to get a new code."
+      }
+    },
+    "progress": {
+      "wait_for_device": "Open **[{url}]({url})**, log in with your netcup customer number and grant access.\n\nIf asked, enter the code **{code}**. This dialog continues automatically once access is granted."
+    },
+    "abort": {
+      "already_configured": "This netcup account is already configured.",
+      "cannot_connect": "Failed to connect to the netcup Server Control Panel.",
+      "reauth_successful": "Re-authentication was successful.",
+      "wrong_account": "You logged in with a different netcup account."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "scan_interval": "Update interval"
+        },
+        "data_description": {
+          "scan_interval": "How often all servers are polled. Each running server uses a few API requests per update."
+        }
+      }
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "rescue_system": { "name": "Rescue system" },
+      "restart_required": { "name": "Restart required" },
+      "traffic_throttled": { "name": "Traffic throttled" },
+      "storage_optimization": { "name": "Storage optimization required" },
+      "guest_agent": { "name": "Guest agent" }
+    },
+    "button": {
+      "power_cycle": { "name": "Power cycle" },
+      "reset": { "name": "Reset" },
+      "power_off": { "name": "Force power off" }
+    },
+    "sensor": {
+      "state": {
+        "name": "State",
+        "state": {
+          "nostate": "No state",
+          "running": "Running",
+          "blocked": "Blocked",
+          "paused": "Paused",
+          "shutdown": "Shutting down",
+          "shutoff": "Off",
+          "crashed": "Crashed",
+          "pmsuspended": "Suspended",
+          "disk_snapshot": "Taking snapshot"
+        }
+      },
+      "boot_time": { "name": "Boot time" },
+      "cpu_usage": { "name": "CPU usage" },
+      "network_in": { "name": "Network in" },
+      "network_out": { "name": "Network out" },
+      "packets_in": { "name": "Packets in" },
+      "packets_out": { "name": "Packets out" },
+      "disk_read": { "name": "Disk reads" },
+      "disk_write": { "name": "Disk writes" },
+      "traffic_in": { "name": "Monthly traffic in" },
+      "traffic_out": { "name": "Monthly traffic out" },
+      "root_fs_usage": { "name": "Root filesystem usage" },
+      "root_fs_free": { "name": "Root filesystem free" },
+      "disk_allocated": { "name": "Disk allocated" },
+      "disk_capacity": { "name": "Disk capacity" },
+      "memory": { "name": "Memory" },
+      "vcpus": { "name": "vCPUs" },
+      "snapshots": { "name": "Snapshots" },
+      "operating_system": { "name": "Operating system" },
+      "kernel": { "name": "Kernel" },
+      "ipv4": { "name": "IPv4 address" },
+      "ipv6": { "name": "IPv6 prefix" },
+      "hostname": { "name": "Hostname" },
+      "location": { "name": "Location" }
+    },
+    "switch": {
+      "power": { "name": "Power" },
+      "autostart": { "name": "Autostart" }
+    }
+  },
+  "exceptions": {
+    "auth_failed": { "message": "netcup authentication failed. Please re-authenticate the integration." },
+    "action_failed": { "message": "netcup action failed: {error}" }
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "config": {
+    "step": {
+      "reauth_confirm": {
+        "title": "netcup erneut anmelden",
+        "description": "Die netcup-Anmeldung ist abgelaufen oder wurde widerrufen. Melde dich erneut an, um fortzufahren."
+      },
+      "not_approved": {
+        "title": "Anmeldung nicht abgeschlossen",
+        "description": "Die Anmeldung wurde abgelehnt oder der Code ist abgelaufen. Absenden, um einen neuen Code zu erhalten."
+      }
+    },
+    "progress": {
+      "wait_for_device": "Öffne **[{url}]({url})**, melde dich mit deiner netcup-Kundennummer an und erteile den Zugriff.\n\nFalls gefragt, gib den Code **{code}** ein. Dieser Dialog geht automatisch weiter, sobald der Zugriff erteilt wurde."
+    },
+    "abort": {
+      "already_configured": "Dieses netcup-Konto ist bereits eingerichtet.",
+      "cannot_connect": "Verbindung zum netcup Server Control Panel fehlgeschlagen.",
+      "reauth_successful": "Die erneute Anmeldung war erfolgreich.",
+      "wrong_account": "Du hast dich mit einem anderen netcup-Konto angemeldet."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "scan_interval": "Aktualisierungsintervall"
+        },
+        "data_description": {
+          "scan_interval": "Wie oft alle Server abgefragt werden. Jeder laufende Server benötigt pro Aktualisierung einige API-Anfragen."
+        }
+      }
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "rescue_system": { "name": "Rettungssystem" },
+      "restart_required": { "name": "Neustart erforderlich" },
+      "traffic_throttled": { "name": "Traffic gedrosselt" },
+      "storage_optimization": { "name": "Speicheroptimierung erforderlich" },
+      "guest_agent": { "name": "Gast-Agent" }
+    },
+    "button": {
+      "power_cycle": { "name": "Aus- und einschalten" },
+      "reset": { "name": "Zurücksetzen" },
+      "power_off": { "name": "Hart ausschalten" }
+    },
+    "sensor": {
+      "state": {
+        "name": "Status",
+        "state": {
+          "nostate": "Kein Status",
+          "running": "Läuft",
+          "blocked": "Blockiert",
+          "paused": "Pausiert",
+          "shutdown": "Fährt herunter",
+          "shutoff": "Aus",
+          "crashed": "Abgestürzt",
+          "pmsuspended": "Ruhezustand",
+          "disk_snapshot": "Erstellt Snapshot"
+        }
+      },
+      "boot_time": { "name": "Startzeit" },
+      "cpu_usage": { "name": "CPU-Auslastung" },
+      "network_in": { "name": "Netzwerk eingehend" },
+      "network_out": { "name": "Netzwerk ausgehend" },
+      "packets_in": { "name": "Pakete eingehend" },
+      "packets_out": { "name": "Pakete ausgehend" },
+      "disk_read": { "name": "Lesezugriffe" },
+      "disk_write": { "name": "Schreibzugriffe" },
+      "traffic_in": { "name": "Monatlicher Traffic eingehend" },
+      "traffic_out": { "name": "Monatlicher Traffic ausgehend" },
+      "root_fs_usage": { "name": "Root-Dateisystem belegt" },
+      "root_fs_free": { "name": "Root-Dateisystem frei" },
+      "disk_allocated": { "name": "Festplatte belegt" },
+      "disk_capacity": { "name": "Festplattenkapazität" },
+      "memory": { "name": "Arbeitsspeicher" },
+      "vcpus": { "name": "vCPUs" },
+      "snapshots": { "name": "Snapshots" },
+      "operating_system": { "name": "Betriebssystem" },
+      "kernel": { "name": "Kernel" },
+      "ipv4": { "name": "IPv4-Adresse" },
+      "ipv6": { "name": "IPv6-Präfix" },
+      "hostname": { "name": "Hostname" },
+      "location": { "name": "Standort" }
+    },
+    "switch": {
+      "power": { "name": "Strom" },
+      "autostart": { "name": "Autostart" }
+    }
+  },
+  "exceptions": {
+    "auth_failed": { "message": "netcup-Authentifizierung fehlgeschlagen. Bitte die Integration erneut anmelden." },
+    "action_failed": { "message": "netcup-Aktion fehlgeschlagen: {error}" }
+  }
+}

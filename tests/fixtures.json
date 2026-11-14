@@ -1,0 +1,321 @@
+{
+ "userinfo": {
+  "id": "4242",
+  "sub": "f:x:12345",
+  "preferred_username": "12345",
+  "name": "Test User"
+ },
+ "servers": [
+  {
+   "id": 1001,
+   "name": "v1001",
+   "disabled": false,
+   "hostname": "v1001.example.net",
+   "nickname": "web",
+   "template": {
+    "id": 1239,
+    "name": "RS 200 G11"
+   }
+  },
+  {
+   "id": 1002,
+   "name": "v1002",
+   "disabled": false,
+   "hostname": "v1002.example.net",
+   "nickname": "backup",
+   "template": {
+    "id": 1239,
+    "name": "RS 200 G11"
+   }
+  }
+ ],
+ "server_1001": {
+  "id": 1001,
+  "name": "v1001",
+  "disabled": false,
+  "hostname": "v1001.example.net",
+  "nickname": "web",
+  "template": {
+   "id": 1239,
+   "name": "RS 200 G11"
+  },
+  "architecture": "AMD64",
+  "disksAvailableSpaceInMiB": 2056192,
+  "exportCount": 1,
+  "gpuDriverAvailable": false,
+  "ipv4Addresses": [
+   {
+    "broadcast": "192.0.2.255",
+    "gateway": "192.0.2.1",
+    "id": 1,
+    "ip": "192.0.2.10",
+    "netmask": "255.255.255.0"
+   }
+  ],
+  "ipv6Addresses": [
+   {
+    "gateway": "fe80::1",
+    "id": 2,
+    "networkPrefix": "2001:db8:1::",
+    "networkPrefixLength": 64
+   }
+  ],
+  "maxCpuCount": 1,
+  "rescueSystemActive": false,
+  "serverLiveInfo": {
+   "autostart": true,
+   "backupTime": "05:37:00+00:00",
+   "bootorder": [
+    "HDD",
+    "CDROM",
+    "NETWORK"
+   ],
+   "cloudinitAttached": false,
+   "configChanged": false,
+   "coresPerSocket": 1,
+   "cpuCount": 1,
+   "cpuMaxCount": 1,
+   "currentServerMemoryInMiB": 2048,
+   "disks": [
+    {
+     "allocationInMiB": 25228,
+     "capacityInMiB": 40960,
+     "dev": "vda",
+     "driver": "virtio"
+    }
+   ],
+   "interfaces": [
+    {
+     "driver": "virtio",
+     "ipv4Addresses": [
+      "192.0.2.10"
+     ],
+     "ipv6LinkLocalAddresses": [],
+     "ipv6NetworkPrefixes": [],
+     "mac": "02:00:00:00:00:00",
+     "mtu": 1500,
+     "rxMonthlyInMiB": 7137,
+     "speedInMBits": 2500,
+     "trafficThrottled": false,
+     "txMonthlyInMiB": 10046,
+     "vlanId": null,
+     "vlanInterface": false
+    },
+    {
+     "driver": "virtio",
+     "ipv4Addresses": [],
+     "ipv6LinkLocalAddresses": [],
+     "ipv6NetworkPrefixes": [],
+     "mac": "02:00:00:00:00:01",
+     "mtu": 0,
+     "rxMonthlyInMiB": 0,
+     "speedInMBits": 100,
+     "trafficThrottled": false,
+     "txMonthlyInMiB": 0,
+     "vlanId": 1004121,
+     "vlanInterface": true
+    }
+   ],
+   "keyboardLayout": "de",
+   "latestQemu": true,
+   "machineType": "pc-i440fx-9.2",
+   "maxServerMemoryInMiB": 2048,
+   "nestedGuest": false,
+   "osOptimization": "LINUX",
+   "requiredStorageOptimization": "NO",
+   "sockets": 1,
+   "state": "RUNNING",
+   "template": "RS 200 G11",
+   "uefi": true,
+   "uptimeInSeconds": 2341923,
+   "vsock": false
+  },
+  "site": {
+   "city": "Nuremberg",
+   "id": 1
+  },
+  "snapshotAllowed": true,
+  "snapshotCount": 1
+ },
+ "server_1002": {
+  "id": 1002,
+  "name": "v1002",
+  "disabled": false,
+  "hostname": "v1002.example.net",
+  "nickname": "backup",
+  "template": {
+   "id": 1239,
+   "name": "RS 200 G11"
+  },
+  "architecture": "AMD64",
+  "disksAvailableSpaceInMiB": 2056192,
+  "exportCount": 0,
+  "gpuDriverAvailable": false,
+  "ipv4Addresses": [
+   {
+    "broadcast": "192.0.2.255",
+    "gateway": "192.0.2.1",
+    "id": 1,
+    "ip": "192.0.2.10",
+    "netmask": "255.255.255.0"
+   }
+  ],
+  "ipv6Addresses": [
+   {
+    "gateway": "fe80::1",
+    "id": 2,
+    "networkPrefix": "2001:db8:1::",
+    "networkPrefixLength": 64
+   }
+  ],
+  "maxCpuCount": 1,
+  "rescueSystemActive": false,
+  "serverLiveInfo": {
+   "autostart": false,
+   "backupTime": "11:03:00+00:00",
+   "bootorder": [
+    "HDD",
+    "CDROM",
+    "NETWORK"
+   ],
+   "cloudinitAttached": false,
+   "configChanged": false,
+   "coresPerSocket": 1,
+   "cpuCount": 1,
+   "cpuMaxCount": 1,
+   "currentServerMemoryInMiB": 2048,
+   "disks": [
+    {
+     "allocationInMiB": 30202,
+     "capacityInMiB": 40960,
+     "dev": "vda",
+     "driver": "virtio"
+    }
+   ],
+   "interfaces": [
+    {
+     "driver": "virtio",
+     "ipv4Addresses": [
+      "192.0.2.10"
+     ],
+     "ipv6LinkLocalAddresses": [],
+     "ipv6NetworkPrefixes": [],
+     "mac": "02:00:00:00:00:00",
+     "mtu": 1500,
+     "rxMonthlyInMiB": 968,
+     "speedInMBits": 2500,
+     "trafficThrottled": false,
+     "txMonthlyInMiB": 312,
+     "vlanId": null,
+     "vlanInterface": false
+    },
+    {
+     "driver": "virtio",
+     "ipv4Addresses": [],
+     "ipv6LinkLocalAddresses": [],
+     "ipv6NetworkPrefixes": [],
+     "mac": "02:00:00:00:00:01",
+     "mtu": 0,
+     "rxMonthlyInMiB": 0,
+     "speedInMBits": 100,
+     "trafficThrottled": false,
+     "txMonthlyInMiB": 0,
+     "vlanId": 1004121,
+     "vlanInterface": true
+    }
+   ],
+   "keyboardLayout": "de",
+   "latestQemu": true,
+   "machineType": "pc-i440fx-9.2",
+   "maxServerMemoryInMiB": 2048,
+   "nestedGuest": false,
+   "osOptimization": "LINUX",
+   "requiredStorageOptimization": "NO",
+   "sockets": 1,
+   "state": "SHUTOFF",
+   "template": "RS 200 G11",
+   "uefi": true,
+   "uptimeInSeconds": 0,
+   "vsock": false
+  },
+  "site": {
+   "city": "Nuremberg",
+   "id": 1
+  },
+  "snapshotAllowed": true,
+  "snapshotCount": 0
+ },
+ "cpu": {
+  "2026-11-14T13:54:00Z": {
+   "CPU0": 4000000.0
+  },
+  "2026-11-14T13:55:00Z": {
+   "CPU0": 4000000.0
+  },
+  "2026-11-14T13:56:00Z": {
+   "CPU0": 0.0
+  }
+ },
+ "network": {
+  "2026-11-14T13:54:00Z": {
+   "02:00:00:00:00:00 IN": 200.0,
+   "02:00:00:00:00:00 OUT": 12.0,
+   "02:00:00:00:00:01 IN": 0.0,
+   "02:00:00:00:00:01 OUT": 0.0
+  },
+  "2026-11-14T13:55:00Z": {
+   "02:00:00:00:00:00 IN": 200.0,
+   "02:00:00:00:00:00 OUT": 12.0,
+   "02:00:00:00:00:01 IN": 0.0,
+   "02:00:00:00:00:01 OUT": 0.0
+  },
+  "2026-11-14T13:56:00Z": {
+   "02:00:00:00:00:00 IN": 0.0,
+   "02:00:00:00:00:00 OUT": 0.0,
+   "02:00:00:00:00:01 IN": 0.0,
+   "02:00:00:00:00:01 OUT": 0.0
+  }
+ },
+ "packets": {
+  "2026-11-14T13:54:00Z": {
+   "02:00:00:00:00:00 IN": 2.5,
+   "02:00:00:00:00:00 OUT": 0.25
+  },
+  "2026-11-14T13:55:00Z": {
+   "02:00:00:00:00:00 IN": 2.5,
+   "02:00:00:00:00:00 OUT": 0.25
+  },
+  "2026-11-14T13:56:00Z": {
+   "02:00:00:00:00:00 IN": 0.0,
+   "02:00:00:00:00:00 OUT": 0.0
+  }
+ },
+ "disk": {
+  "2026-11-14T13:54:00Z": {
+   "vda Read": 0.0,
+   "vda Write": 0.05
+  },
+  "2026-11-14T13:55:00Z": {
+   "vda Read": 0.0,
+   "vda Write": 0.05
+  },
+  "2026-11-14T13:56:00Z": {
+   "vda Read": 0.0,
+   "vda Write": 0.0
+  }
+ },
+ "guest_agent": {
+  "guestAgentAvailable": true,
+  "guestAgentData": {
+   "os.pretty-name": "NixOS 26.05 (Yarara)",
+   "os.kernel-release": "6.18.55",
+   "fs.count": 2,
+   "fs.0.mountpoint": "/",
+   "fs.0.total-bytes": 40000000000,
+   "fs.0.used-bytes": 10000000000,
+   "fs.1.mountpoint": "/boot",
+   "fs.1.total-bytes": 500000000,
+   "fs.1.used-bytes": 300000000
+  }
+ }
+}
