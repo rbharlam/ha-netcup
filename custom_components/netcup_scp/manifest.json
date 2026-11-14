@@ -1,6 +1,7 @@
 {
   "domain": "netcup_scp",
   "name": "netcup SCP",
+  "categories": ["computers_network.monitoring", "computers_network.cloud_developer_tools"],
   "codeowners": ["@rbharlam"],
   "config_flow": true,
   "documentation": "https://github.com/rbharlam/ha-netcup",
