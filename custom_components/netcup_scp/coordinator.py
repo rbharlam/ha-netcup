@@ -173,14 +173,24 @@ class NetcupCoordinator(DataUpdateCoordinator[dict[int, ServerData]]):
         if ids and not data:
             raise UpdateFailed("Failed to update any server")
 
-        self._remove_stale_devices(set(ids))
+        self._sync_devices(data, set(ids))
         return data
 
-    def _remove_stale_devices(self, server_ids: set[int]) -> None:
+    def _sync_devices(self, data: dict[int, ServerData], server_ids: set[int]) -> None:
+        """Follow renames in the SCP and drop devices of deleted servers."""
         registry = dr.async_get(self.hass)
         for device in dr.async_entries_for_config_entry(
             registry, self.config_entry.entry_id
         ):
             ids = {int(i) for d, i in device.identifiers if d == DOMAIN and i.isdigit()}
-            if ids and not ids & server_ids:
+            if not ids:
+                continue
+            if not ids & server_ids:
                 registry.async_remove_device(device.id)
+                continue
+            server = data.get(next(iter(ids)))
+            if server is None:
+                continue
+            model = (server.info.get("template") or {}).get("name")
+            if device.name != server.name or device.model != model:
+                registry.async_update_device(device.id, name=server.name, model=model)

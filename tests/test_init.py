@@ -190,3 +190,44 @@ def test_parse_metrics() -> None:
         "disk_write": 0.05,
     }
     assert parse_metrics({}, None, "error", {}) == {}
+
+
+async def test_rename_updates_device_without_duplicates(
+    hass: HomeAssistant, mock_api: AiohttpClientMocker, config_entry: MockConfigEntry
+) -> None:
+    """Renaming a server in the SCP renames the device and keeps its entities."""
+    await _setup(hass, config_entry)
+    ent_reg = er.async_get(hass)
+    before = {
+        e.unique_id: e.entity_id
+        for e in er.async_entries_for_config_entry(ent_reg, config_entry.entry_id)
+    }
+
+    renamed = {**FIXTURES["server_1001"], "nickname": "api"}
+    mock_api.clear_requests()
+    mock_api.post(f"{AUTH_URL}/token", json={"access_token": "a", "expires_in": 300})
+    mock_api.get(
+        f"{API_URL}/servers",
+        json=[{**FIXTURES["servers"][0], "nickname": "api"}, FIXTURES["servers"][1]],
+    )
+    mock_api.get(f"{API_URL}/servers/1001", json=renamed)
+    mock_api.get(f"{API_URL}/servers/1002", json=FIXTURES["server_1002"])
+    await config_entry.runtime_data.async_refresh()
+    await hass.async_block_till_done()
+
+    device = dr.async_get(hass).async_get_device_by_identifier(
+        (DOMAIN, "1001"), config_entry.entry_id
+    )
+    assert device is not None
+    assert device.name == "api"
+    after = {
+        e.unique_id: e.entity_id
+        for e in er.async_entries_for_config_entry(ent_reg, config_entry.entry_id)
+    }
+    assert after == before
+    assert (
+        len(
+            dr.async_entries_for_config_entry(dr.async_get(hass), config_entry.entry_id)
+        )
+        == 2
+    )
